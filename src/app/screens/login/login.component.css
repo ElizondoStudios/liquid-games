@@ -1,5 +1,6 @@
 .header {
   height: 70px;
+  background-color: rgb(17, 17, 17);
   /*Lo utilizamos para centrar verticalmente el logo, además de acomodarlo a la derecha*/
   display: flex;
   align-items: center;
@@ -11,4 +12,34 @@
   margin-right: 20px;
   width: 120px;
   height: auto;
+}
+.headertext {
+  font-size: 24px;
+  font-family: "Arial", sans-serif;
+  color: #fff; /* Color de texto normal (blanco en este caso) */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+}
+/* Aplica la animación en el hover */
+.headertext:hover {
+  animation: neon 1s infinite alternate;
+}
+/* Crea la animación de neón */
+@keyframes neon {
+  0% {
+    text-shadow: 0 0 10px #1f0cc8, 0 0 20px #1f0cc8, 0 0 30px #1f0cc8,
+      0 0 40px #00ddff, 0 0 70px #00ddff, 0 0 80px #00ddff, 0 0 100px #00ddff,
+      0 0 150px #00ddff;
+  }
+  50% {
+    text-shadow: 0 0 5px #1f0cc8, 0 0 10px #1f0cc8, 0 0 15px #1f0cc8,
+      0 0 20px #00ddff, 0 0 35px #00ddff, 0 0 40px #00ddff, 0 0 50px #00ddff,
+      0 0 75px #00ddff;
+  }
+  100% {
+    text-shadow: 0 0 10px #1f0cc8, 0 0 20px #1f0cc8, 0 0 30px #1f0cc8,
+      0 0 40px #00ddff, 0 0 70px #00ddff, 0 0 80px #00ddff, 0 0 100px #00ddff,
+      0 0 150px #00ddff;
+  }
 }

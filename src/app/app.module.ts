@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './layouts/inicio/inicio.component';
@@ -15,14 +14,10 @@ import { BibliotecaComponent } from './screens/biblioteca/biblioteca.component';
     InicioComponent,
     TiendaComponent,
     LoginComponent,
-    BibliotecaComponent
+    BibliotecaComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
