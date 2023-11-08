@@ -1,0 +1,14 @@
+.header {
+  height: 70px;
+  /*Lo utilizamos para centrar verticalmente el logo, además de acomodarlo a la derecha*/
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  /*Lo utilizamos para separar los elementos del contenedor horizontalmente*/
+  gap: 20px;
+}
+#logo {
+  margin-right: 20px;
+  width: 120px;
+  height: auto;
+}
