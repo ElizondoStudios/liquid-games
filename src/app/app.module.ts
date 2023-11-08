@@ -8,6 +8,7 @@ import { TiendaComponent } from './screens/tienda/tienda.component';
 import { LoginComponent } from './screens/login/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BibliotecaComponent } from './screens/biblioteca/biblioteca.component';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BibliotecaComponent } from './screens/biblioteca/biblioteca.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

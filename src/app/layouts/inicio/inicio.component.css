@@ -22,22 +22,36 @@
 
     .nav-links-custom{
         display: flex;
-        align-items: flex-end;
+        align-items: center;
         justify-content: space-between;
         width: 40%;
         padding: 0 1em;
     }
 
         .nav-links-custom a{
-            transition: all 0.3s ease 0s;
+            transition: all 0.1s linear;
+            color: var(--texto-color);
+            user-select: none;
+        }
+
+        .nav-links-custom a:not(.active){
+            opacity: 0.7;
         }
 
         .nav-links-custom .active{
-            font-size: 4rem;
-            font-weight: 600;
-            margin: none !important;
+            transform: scale(1.2);
         }
 
         .nav-links-custom a:hover:not(.active){
-            opacity: 0.8;
+            opacity: 0.9;
         }
+
+.navbar-brand{
+    max-width: 30%;
+}
+
+    #logo{
+        height: 100%;
+        width: auto;
+        max-height: 60px;
+    }

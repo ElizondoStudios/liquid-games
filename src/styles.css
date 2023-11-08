@@ -1,11 +1,17 @@
+*{
+    /* Variables de paleta de color */
+    --primario-color: #fff;
+    --primario-bg: #1E1E1E;
+    --acento-1: #358fee;
+    --acento-2: #01cafd;
+
+    color: var(--primario-color);
+}
+
 body, :root{
     background-color: #1E1E1E;
     font-size: 10px;
     font-family: 'Roboto', sans-serif;
-}
-
-*{
-    color: #fff;
 }
 
 .titulo{
@@ -13,7 +19,12 @@ body, :root{
     font-weight: normal;
 }
 
-
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.btn-icon{
+    background-color: transparent;
+    border: none;
+}
+    .btn-icon mat-icon{
+        font-size: 4rem;
+        width: auto;
+        height: auto;
+    }
