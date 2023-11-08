@@ -1,0 +1,43 @@
+.inicio{
+    width: 100vw;
+    height: 100vh;
+}
+
+    .inicio header{
+        height: 15vh;
+    }
+
+    .inicio main{
+        height: 80vh;
+    }
+
+    .inicio footer{
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+        font-size: 1.6rem;
+        height: 5vh;
+    }
+
+    .nav-links-custom{
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        width: 40%;
+        padding: 0 1em;
+    }
+
+        .nav-links-custom a{
+            transition: all 0.3s ease 0s;
+        }
+
+        .nav-links-custom .active{
+            font-size: 4rem;
+            font-weight: 600;
+            margin: none !important;
+        }
+
+        .nav-links-custom a:hover:not(.active){
+            opacity: 0.8;
+        }

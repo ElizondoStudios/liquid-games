@@ -7,13 +7,15 @@ import { InicioComponent } from './layouts/inicio/inicio.component';
 import { TiendaComponent } from './screens/tienda/tienda.component';
 import { LoginComponent } from './screens/login/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BibliotecaComponent } from './screens/biblioteca/biblioteca.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
     TiendaComponent,
-    LoginComponent
+    LoginComponent,
+    BibliotecaComponent
   ],
   imports: [
     BrowserModule,

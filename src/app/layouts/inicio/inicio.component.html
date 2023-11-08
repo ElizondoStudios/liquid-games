@@ -1,1 +1,25 @@
-<router-outlet></router-outlet>
+<div class="inicio">
+    <header>
+        <nav class="navbar navbar-custom">
+            <a class="titulo navbar-brand mx-3" href="#">[Logo]</a>
+            <div class="nav-links-custom">
+                <a class="titulo nav-item nav-link active" routerLink="/inicio/tienda">Tienda</a>
+                <a class="titulo nav-item nav-link" routerLink="/inicio/biblioteca">Biblioteca</a>
+                <a class="titulo nav-item nav-link" routerLink="/inicio/carrito">Carrito</a>
+                <span class="titulo"><i>#</i></span>
+            </div>
+          </nav>
+    </header>
+    <main>
+        <router-outlet></router-outlet>
+    </main>
+    <footer>
+        <span>
+            Hecho con amor por los miones ❤
+        </span>
+        <span>
+            Liquid &copy; 2023
+        </span>
+    </footer>
+</div>
+
