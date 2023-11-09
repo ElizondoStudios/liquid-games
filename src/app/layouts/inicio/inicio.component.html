@@ -1,12 +1,12 @@
 <div class="inicio">
     <header>
         <nav class="navbar navbar-custom">
-            <a class="titulo navbar-brand mx-3" href="#">[Logo]</a>
-            <div class="nav-links-custom">
-                <a class="titulo nav-item nav-link active" routerLink="/inicio/tienda">Tienda</a>
-                <a class="titulo nav-item nav-link" routerLink="/inicio/biblioteca">Biblioteca</a>
-                <a class="titulo nav-item nav-link" routerLink="/inicio/carrito">Carrito</a>
-                <span class="titulo"><i>#</i></span>
+            <a class="titulo navbar-brand mx-3" href="#"><img src="../../../assets/logo.png" id="logo" alt="logo"></a>
+            <div class="nav nav-links-custom">
+                <a routerLinkActive="active" class="titulo nav-item nav-link" href="/inicio/tienda" routerLink="/inicio/tienda">Tienda</a>
+                <a routerLinkActive="active" class="titulo nav-item nav-link" href="/inicio/biblioteca" routerLink="/inicio/biblioteca">Biblioteca</a>
+                <a routerLinkActive="active" class="titulo nav-item nav-link" href="/inicio/carrito" routerLink="/inicio/carrito">Carrito</a>
+                <button class="btn-icon" matTooltip="configuración"><mat-icon>settings</mat-icon></button>
             </div>
           </nav>
     </header>
