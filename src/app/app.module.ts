@@ -9,6 +9,8 @@ import { LoginComponent } from './screens/login/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BibliotecaComponent } from './screens/biblioteca/biblioteca.component';
 import {MatIconModule} from '@angular/material/icon';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { CarritoComponent } from './screens/carrito/carrito.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +18,15 @@ import {MatIconModule} from '@angular/material/icon';
     InicioComponent,
     TiendaComponent,
     LoginComponent,
-    BibliotecaComponent
+    BibliotecaComponent,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     MatIconModule,
+    MatTooltipModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
