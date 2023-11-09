@@ -28,7 +28,7 @@ export class AppComponent {
       })
   ).subscribe( (data: any) => {
       if (data) {
-        this.titleService.setTitle(`${data}`);
+        this.titleService.setTitle(`Liquid - ${data}`);
       }
   });
   }
