@@ -2,8 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './layouts/inicio/inicio.component';
 import { LoginComponent } from './screens/login/login.component';
+import { CarritoComponent } from './screens/carrito/carrito.component';
 
 const routes: Routes = [
+  {
+    path: 'cart',
+    component: CarritoComponent
+  },
   {
     path: 'login',
     component: LoginComponent,
