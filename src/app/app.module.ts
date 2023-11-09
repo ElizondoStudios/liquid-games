@@ -7,7 +7,9 @@ import { TiendaComponent } from './screens/tienda/tienda.component';
 import { LoginComponent } from './screens/login/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BibliotecaComponent } from './screens/biblioteca/biblioteca.component';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,19 +17,16 @@ import {MatIconModule} from '@angular/material/icon';
     InicioComponent,
     TiendaComponent,
     LoginComponent,
-<<<<<<< HEAD
     BibliotecaComponent,
-=======
-    BibliotecaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     MatIconModule,
->>>>>>> origin/master
+    MatInputModule,
+    FormsModule,
   ],
-  imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [],
   bootstrap: [AppComponent],
 })

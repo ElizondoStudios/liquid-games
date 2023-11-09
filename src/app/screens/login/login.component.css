@@ -8,38 +8,44 @@
   /*Lo utilizamos para separar los elementos del contenedor horizontalmente*/
   gap: 20px;
 }
-#logo {
+.logo {
   margin-right: 20px;
-  width: 120px;
+  width: 150px;
   height: auto;
 }
-.headertext {
-  font-size: 24px;
-  font-family: "Arial", sans-serif;
-  color: #fff; /* Color de texto normal (blanco en este caso) */
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  position: relative;
+.botoncito {
+  background-color: #1f0cc8;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 15px 0px 15px 0px;
+  padding: 10px;
+  font-size: 20px;
+  width: 150px;
 }
-/* Aplica la animación en el hover */
-.headertext:hover {
-  animation: neon 1s infinite alternate;
+.botoncito:hover {
+  animation: agrandar 2s alternate-reverse infinite ease-in-out;
+  font-style: bold;
+  font-size: 21px;
 }
-/* Crea la animación de neón */
-@keyframes neon {
+@keyframes agrandar {
   0% {
-    text-shadow: 0 0 10px #1f0cc8, 0 0 20px #1f0cc8, 0 0 30px #1f0cc8,
-      0 0 40px #00ddff, 0 0 70px #00ddff, 0 0 80px #00ddff, 0 0 100px #00ddff,
-      0 0 150px #00ddff;
+    transform: scale(1);
   }
   50% {
-    text-shadow: 0 0 5px #1f0cc8, 0 0 10px #1f0cc8, 0 0 15px #1f0cc8,
-      0 0 20px #00ddff, 0 0 35px #00ddff, 0 0 40px #00ddff, 0 0 50px #00ddff,
-      0 0 75px #00ddff;
+    transform: scale(1.05);
+    background-color: darkblue;
   }
   100% {
-    text-shadow: 0 0 10px #1f0cc8, 0 0 20px #1f0cc8, 0 0 30px #1f0cc8,
-      0 0 40px #00ddff, 0 0 70px #00ddff, 0 0 80px #00ddff, 0 0 100px #00ddff,
-      0 0 150px #00ddff;
+    transform: scale(1);
+    background-color: mediumblue;
   }
+}
+#portada {
+  margin: 20px 0px 10px 0px;
+  width: 550px;
+  height: 310px;
+  border-radius: 10px;
+}
+.divportada {
+  text-align: center;
 }
