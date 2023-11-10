@@ -12,6 +12,10 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { CarritoComponent } from './screens/carrito/carrito.component';
+import { SignInComponent } from './screens/sign-in/sign-in.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -21,6 +25,7 @@ import { CarritoComponent } from './screens/carrito/carrito.component';
     LoginComponent,
     BibliotecaComponent,
     CarritoComponent,
+    SignInComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +35,9 @@ import { CarritoComponent } from './screens/carrito/carrito.component';
     MatTooltipModule,
     MatInputModule,
     FormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
