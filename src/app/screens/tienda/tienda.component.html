@@ -1,1 +1,32 @@
-<span>Hello mawi</span>
+<div class="row">
+    <div class="col-12">
+        <div class="seccion">
+            <div class="linea"></div>
+            <span class="titulo">
+                Juegos Destacados
+            </span>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="juegos-destacados-carrousell mt-5">
+            <div class="juego-destacado" [ngStyle]="{'background-image': 'url('+JuegosDestacado[IndiceDestacado].imagen_fondo+')'}">
+                <button id="anterior-juego"><mat-icon>chevron_left</mat-icon></button>
+                <div class="info-juego">
+                    <img [src]="JuegosDestacado[IndiceDestacado].imagen_portada" alt="Portada" class="portada-juego-destacado">
+                    <div class="datos">
+                        <span class="titulo">
+                            {{JuegosDestacado[IndiceDestacado].nombre}}
+                        </span>
+                        <span class="titulo">
+                            Precio: ${{JuegosDestacado[IndiceDestacado].precio}}
+                        </span>
+                        <span class="titulo">
+                            ESBR: {{JuegosDestacado[IndiceDestacado].esbr}}
+                        </span>
+                    </div>
+                </div>
+                <button id="siguiente-juego"><mat-icon>chevron_right</mat-icon></button>
+            </div>
+        </div>
+    </div>
+</div>

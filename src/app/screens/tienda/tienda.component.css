@@ -1,0 +1,51 @@
+
+/* ##### Juego destacado ##### */
+.juego-destacado{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 65vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-color: var(--primario-bg);
+    background-blend-mode: multiply;
+
+    .info-juego{
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2em;
+
+        .portada-juego-destacado{
+            height: 70%;
+        }
+
+        .datos{
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: center;
+            gap: 2em;
+            height: 50%;
+        }
+    }
+}
+
+    #anterior-juego, #siguiente-juego{
+        background-color: transparent;
+        border: none;
+        color: var(--primario-color);
+        mat-icon{
+            font-size: 5em;
+        }
+    }
+
+    #anterior-juego{
+        left: 0.5em;
+    }
+
+    #siguiente-juego{
+        right: 0.5em;
+    }
