@@ -1,4 +1,4 @@
-interface juego{
+export default interface juego{
     id: number;
     nombre: string;
     descripcion: string;

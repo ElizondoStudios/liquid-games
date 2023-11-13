@@ -1,4 +1,4 @@
-interface usuario{
+export default interface usuario{
     id: number,
     usuario : string,
     contrasenia : string,
