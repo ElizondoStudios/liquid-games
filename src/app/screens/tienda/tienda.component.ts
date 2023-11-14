@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import juego from '../../interfaces/juego';
+import categoria from 'src/app/interfaces/categoria';
 
 @Component({
   selector: 'app-tienda',
@@ -8,12 +9,14 @@ import juego from '../../interfaces/juego';
 })
 export class TiendaComponent {
   JuegosDestacado: juego[] = [];
+  Categorias: categoria[] = [];
   IndiceDestacado: number= 0;
 
   constructor() { }
 
   ngOnInit(): void {
     this.GetJuegosDestacado();
+    this.GetCategorias();
   }
 
   siguienteJuego(): void {
@@ -48,6 +51,8 @@ export class TiendaComponent {
     return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'MXN' }).format(cantidad);
   }
 
+  // LLamada a la API
+
   GetJuegosDestacado(): void {
     this.JuegosDestacado = [
       {
@@ -75,5 +80,42 @@ export class TiendaComponent {
         imagen_portada: "../../assets/images/ivan.jfif",
       }
     ]
+  }
+
+  GetCategorias(): void {
+    this.Categorias = [
+      {
+        id: 1,
+        nombre: 'Accion',
+      },
+      {
+        id: 2,
+        nombre: 'Aventura',
+      },
+      {
+        id: 3,
+        nombre: 'Estrategia',
+      },
+      {
+        id: 4,
+        nombre: 'RPG',
+      },
+      {
+        id: 5,
+        nombre: 'Deportes',
+      },
+      {
+        id: 6,
+        nombre: 'Carreras',
+      },
+      {
+        id: 7,
+        nombre: 'Simulacion',
+      },
+      {
+        id: 8,
+        nombre: 'Multijugador',
+      }
+    ].map(categoria => ({...categoria, imagen: `../../assets/images/Doom_portada.jfif`}))
   }
 }
