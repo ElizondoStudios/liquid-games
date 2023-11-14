@@ -10,7 +10,7 @@
     <div class="col-12">
         <div class="juegos-destacados-carrousell mt-5">
             <div class="juego-destacado" [ngStyle]="{'background-image': 'url('+JuegosDestacado[IndiceDestacado].imagen_fondo+')'}">
-                <button id="anterior-juego"><mat-icon>chevron_left</mat-icon></button>
+                <button (click)="anteriorJuego()" class="btn-icon cambiar-juego"id="anterior-juego"><i class="material-icons">chevron_left</i></button>
                 <div class="info-juego">
                     <img [src]="JuegosDestacado[IndiceDestacado].imagen_portada" alt="Portada" class="portada-juego-destacado">
                     <div class="datos">
@@ -18,14 +18,14 @@
                             {{JuegosDestacado[IndiceDestacado].nombre}}
                         </span>
                         <span class="titulo">
-                            Precio: ${{JuegosDestacado[IndiceDestacado].precio}}
+                            Precio: {{formatCurrency(JuegosDestacado[IndiceDestacado].precio)}}
                         </span>
                         <span class="titulo">
                             ESBR: {{JuegosDestacado[IndiceDestacado].esbr}}
                         </span>
                     </div>
                 </div>
-                <button id="siguiente-juego"><mat-icon>chevron_right</mat-icon></button>
+                <button (click)="siguienteJuego()" class="btn-icon cambiar-juego"id="siguiente-juego"><i class="material-icons">chevron_right</i></button>
             </div>
         </div>
     </div>

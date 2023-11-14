@@ -10,6 +10,7 @@
     background-size: cover;
     background-color: var(--primario-bg);
     background-blend-mode: multiply;
+    transition: all linear 0.6s;
 
     .info-juego{
         z-index: 10;
@@ -20,6 +21,7 @@
 
         .portada-juego-destacado{
             height: 70%;
+            max-width: 185px;
         }
 
         .datos{
@@ -33,13 +35,20 @@
     }
 }
 
-    #anterior-juego, #siguiente-juego{
-        background-color: transparent;
-        border: none;
-        color: var(--primario-color);
-        mat-icon{
-            font-size: 5em;
-        }
+    .cambiar-juego i{
+        font-size: 8rem;
+        position: relative;
+        transition: all 0.2s linear;
+    }
+
+    .cambiar-juego:hover{
+        transform: scale(1.2) translateX(0.2em);
+        opacity: 0.8;
+    }
+
+    .cambiar-juego:active{
+        transform: scale(1.1) translateX(0.2em);
+        opacity: 0.6;
     }
 
     #anterior-juego{
@@ -48,4 +57,56 @@
 
     #siguiente-juego{
         right: 0.5em;
+    }
+
+    @keyframes transicion-juego-siguiente{
+        0%{
+            transform: translateX(0);
+        }
+        25%{
+            transform: translateX(-150%);
+            opacity: 0.5;
+        }
+        50%{
+            transform: translateX(-300%);
+            opacity: 0;
+        }
+        75%{
+            transform: translateX(150%);
+            opacity: 0;
+        }
+        100%{
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes transicion-juego-anterior{
+        0%{
+            transform: translateX(0);
+        }
+        25%{
+            transform: translateX(150%);
+            opacity: 0.5;
+        }
+        50%{
+            transform: translateX(300%);
+            opacity: 0;
+        }
+        75%{
+            transform: translateX(-150%);
+            opacity: 0;
+        }
+        100%{
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    .transicion-juego-siguiente{
+        animation: linear 0.6s transicion-juego-siguiente;
+    }
+
+    .transicion-juego-anterior{
+        animation: linear 0.6s transicion-juego-anterior;
     }
