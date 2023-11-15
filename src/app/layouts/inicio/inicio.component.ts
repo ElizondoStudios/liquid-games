@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inicio',
@@ -11,12 +11,13 @@ export class InicioComponent {
   Titulo: string= "";
   Busqueda: string="";
 
-  constructor(private titleService : Title) {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
   }
 
   BuscarJuego(): void{
-    console.log(this.Busqueda)
+    const slug= this.Busqueda.toLocaleLowerCase().replaceAll(" ", "-");
+    this.router.navigateByUrl(`inicio/juegos-busqueda?slug=${slug}&busqueda=${this.Busqueda}`);
   }
 }
