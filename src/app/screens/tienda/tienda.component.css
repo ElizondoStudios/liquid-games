@@ -18,6 +18,8 @@
         align-items: center;
         justify-content: center;
         gap: 2em;
+        transition: all linear 0.1s;
+        cursor: pointer;
 
         .portada-juego-destacado{
             height: 70%;
@@ -33,6 +35,10 @@
             height: 50%;
         }
     }
+}
+
+.info-juego:hover{
+    transform: scale(1.05);
 }
 
     .cambiar-juego i{
