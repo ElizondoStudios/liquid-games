@@ -8,6 +8,6 @@ export const InicioRoutes: Routes = [
     { path: 'tienda', component: TiendaComponent, data: { title: 'Tienda' } },
     { path: 'biblioteca', component: BibliotecaComponent, data: { title: 'Biblioteca' } },
     { path: 'carrito', component: CarritoComponent, data: { title: 'Carrito' } },
-    { path: 'juegos-categoria/:id', component: JuegosCategoriaComponent, data: { title: 'Juegos por categoria' } },
+    { path: 'juegos-categoria', component: JuegosCategoriaComponent, data: { title: 'Juegos por categoria' } },
     { path: '', redirectTo: 'tienda', pathMatch: 'full' }
 ];

@@ -1,7 +1,13 @@
 <div class="inicio">
     <header>
         <nav class="navbar navbar-custom">
-            <a class="titulo navbar-brand mx-3" routerLink="/inicio/tienda"><img src="../../../assets/logo.png" id="logo" alt="logo"></a>
+            <div class="py-3 d-flex align-items-center justify-content-around">
+                <a class="titulo navbar-brand mx-5" routerLink="/inicio/tienda"><img src="../../../assets/logo.png" id="logo" alt="logo"></a>
+                <mat-form-field class="mx-5" color="accent">
+                    <input [(ngModel)]="Busqueda" (keydown.enter)="BuscarJuego()" type="text" matInput placeholder="Buscar..."/>
+                    <mat-icon matPrefix>search</mat-icon>
+                </mat-form-field>
+            </div>
             <div class="nav nav-links-custom">
                 <a routerLinkActive="active" class="titulo nav-item nav-link" routerLink="/inicio/tienda">Tienda</a>
                 <a routerLinkActive="active" class="titulo nav-item nav-link" routerLink="/inicio/biblioteca">Biblioteca</a>

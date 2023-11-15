@@ -9,10 +9,14 @@ import { Title } from '@angular/platform-browser';
 })
 export class InicioComponent {
   Titulo: string= "";
+  Busqueda: string="";
 
   constructor(private titleService : Title) {}
 
   ngOnInit() {
-    this.titleService
+  }
+
+  BuscarJuego(): void{
+    console.log(this.Busqueda)
   }
 }

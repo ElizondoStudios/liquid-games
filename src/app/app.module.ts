@@ -16,6 +16,8 @@ import { SignInComponent } from './screens/sign-in/sign-in.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { JuegosCategoriaComponent } from './screens/juegos-categoria/juegos-categoria.component';
+import { JuegosBusquedaComponent } from './screens/juegos-busqueda/juegos-busqueda.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BibliotecaComponent,
     CarritoComponent,
     SignInComponent,
+    JuegosCategoriaComponent,
+    JuegosBusquedaComponent,
   ],
   imports: [
     BrowserModule,

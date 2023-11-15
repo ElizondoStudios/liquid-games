@@ -69,7 +69,7 @@ export class TiendaComponent {
         imagen_portada: "../../assets/images/Doom_portada.jfif",
       },
       {
-        id: 1,
+        id: 2,
         nombre: 'Ivancito Georgito',
         descripcion: 'UwU 👉👈',
         precio: 2000000,
@@ -120,7 +120,7 @@ export class TiendaComponent {
     ].map(categoria => ({...categoria, imagen: `../../assets/images/Doom_portada.jfif`}))
   }
 
-  AbrirCategoria(id: number): void{
-    this.router.navigate([`inicio/juegos-categoria/${id}`]);
+  AbrirCategoria(id: number, nombre: string): void{
+    this.router.navigateByUrl(`inicio/juegos-categoria?id=${id}&nombre=${nombre}`);
   }
 }
