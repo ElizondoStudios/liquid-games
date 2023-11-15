@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import juego from '../../interfaces/juego';
 import categoria from 'src/app/interfaces/categoria';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-tienda',
@@ -12,7 +13,7 @@ export class TiendaComponent {
   Categorias: categoria[] = [];
   IndiceDestacado: number= 0;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.GetJuegosDestacado();
@@ -117,5 +118,9 @@ export class TiendaComponent {
         nombre: 'Multijugador',
       }
     ].map(categoria => ({...categoria, imagen: `../../assets/images/Doom_portada.jfif`}))
+  }
+
+  AbrirCategoria(id: number): void{
+    this.router.navigate([`inicio/juegos-categoria/${id}`]);
   }
 }
