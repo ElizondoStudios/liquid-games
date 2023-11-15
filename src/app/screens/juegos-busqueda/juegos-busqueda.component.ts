@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import juego from 'src/app/interfaces/juego';
 
 @Component({
@@ -13,7 +13,7 @@ export class JuegosBusquedaComponent implements OnInit {
   Busqueda: string= "";
   JuegosBusqueda: juego[]=[];
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -21,6 +21,10 @@ export class JuegosBusquedaComponent implements OnInit {
       this.Busqueda = params['busqueda'];
       this.GetJuegosBusqueda();
     });
+  }
+
+  AbrirJuego(id: number): void{
+    this.router.navigateByUrl(`inicio/venta-juego?id=${id}`);
   }
 
   GetJuegosBusqueda(): void {

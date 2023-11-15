@@ -11,7 +11,7 @@
         <div class="juegos-destacados-carrousell mt-5">
             <div class="juego-destacado" [ngStyle]="{'background-image': 'url('+JuegosDestacado[IndiceDestacado].imagen_fondo+')'}">
                 <button (click)="anteriorJuego()" class="btn-icon cambiar-juego"id="anterior-juego"><i class="material-icons">chevron_left</i></button>
-                <div class="info-juego">
+                <div class="info-juego" (click)="AbrirJuego(JuegosDestacado[IndiceDestacado].id)">
                     <img [src]="JuegosDestacado[IndiceDestacado].imagen_portada" alt="Portada" class="portada-juego-destacado">
                     <div class="datos">
                         <span class="titulo">

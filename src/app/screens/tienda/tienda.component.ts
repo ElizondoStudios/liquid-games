@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import juego from '../../interfaces/juego';
 import categoria from 'src/app/interfaces/categoria';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tienda',
@@ -50,6 +50,10 @@ export class TiendaComponent {
 
   formatCurrency(cantidad: number): string{
     return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'MXN' }).format(cantidad);
+  }
+
+  AbrirJuego(id: number): void{
+    this.router.navigateByUrl(`inicio/venta-juego?id=${id}`);
   }
 
   // LLamada a la API
