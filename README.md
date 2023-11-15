@@ -81,4 +81,3 @@ postJuegosCategoria(params: {id: number}): juego[]{
 [MauriRiver](https://github.com/MauriRiver345)
 [Ikaros](https://github.com/IkarosKurtz)
 [Ivan Hurtado](https://github.com/IvanHurtado92)
-
