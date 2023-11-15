@@ -1,0 +1,76 @@
+.logo {
+  padding-right: 20px;
+  width: 55%;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.imglogo {
+  text-align: center;
+}
+.botoncito {
+  background-color: rgb(12, 125, 200);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 15px 0px 15px 0px;
+  padding: 10px;
+  font-size: 20px;
+  width: 150px;
+  z-index: 3;
+}
+.botoncito:hover {
+  animation: agrandar 2s alternate-reverse infinite ease-in-out;
+  font-style: bold;
+  font-size: 21px;
+}
+@keyframes agrandar {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+    background-color: rgb(26, 119, 226);
+  }
+  100% {
+    transform: scale(1);
+    background-color: rgb(12, 125, 200);
+  }
+}
+#portada {
+  margin: 20px 0px 10px 0px;
+  width: 550px;
+  height: 310px;
+  border-radius: 10px;
+}
+.divportada {
+  text-align: center;
+}
+
+.back-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.15;
+  margin-top: 0;
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+}
+.maincontainer {
+  margin-top: 7%;
+  margin-left: 36%;
+  border-color: #585757;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 2px;
+  width: 30%;
+  backdrop-filter: blur(3px);
+  background-color: #7d7d7d66;
+  padding: 2% 0% 2% 0%;
+}
+.mat-mdc-form-field {
+  width: 60%;
+}
+.registrarse {
+  margin-top: 10%;
+  text-align: center;
+}
