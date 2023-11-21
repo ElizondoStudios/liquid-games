@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import juego from 'src/app/interfaces/juego';
 import categoria from 'src/app/interfaces/categoria';
 
@@ -13,7 +13,7 @@ export class JuegosCategoriaComponent implements OnInit{
   IdCategoria: number= 0;
   NombreCategoria: string= "";
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -21,6 +21,10 @@ export class JuegosCategoriaComponent implements OnInit{
       this.NombreCategoria = params['nombre'];
       this.GetJuegosCategoria();
     });
+  }
+
+  AbrirJuego(id: number): void{
+    this.router.navigateByUrl(`inicio/venta-juego?id=${id}`);
   }
 
   GetJuegosCategoria(): void {

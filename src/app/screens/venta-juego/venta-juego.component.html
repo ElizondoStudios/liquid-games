@@ -1,0 +1,21 @@
+<div class="venta-juego" [ngStyle]="{'background-image': 'url('+JuegoSeleccionado?.imagen_fondo+')'}">
+    <div class="contenido">
+        <img [src]="JuegoSeleccionado?.imagen_portada" [alt]="JuegoSeleccionado?.nombre">
+        <div class="contenido--datos">
+            <span class="titulo">{{JuegoSeleccionado?.nombre}}</span>
+            <span class="titulo">ESRB: {{JuegoSeleccionado?.esbr}}</span>
+            <span class="titulo">{{JuegoSeleccionado?.precio | currency}}</span>
+            <span class="titulo">Rating: {{JuegoSeleccionado?.calificacion}}</span>
+            <div class="d-flex align-items-center justify-content-between">
+                <button class="btn boton-accion" id="boton-comprar" (click)="VenderJuego()">
+                    Comprar
+                </button>
+                <button class="btn boton-accion" id="boton-agregar" (click)="AgregarJuegoCarrito()">
+                    Agregar al carrito
+                </button>
+            </div>
+            <span class="titulo">Descripción:</span>
+            <span class="titulo">{{JuegoSeleccionado?.descripcion}}</span>
+        </div>
+    </div>
+</div>

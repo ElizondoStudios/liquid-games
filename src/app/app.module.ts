@@ -18,6 +18,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JuegosCategoriaComponent } from './screens/juegos-categoria/juegos-categoria.component';
 import { JuegosBusquedaComponent } from './screens/juegos-busqueda/juegos-busqueda.component';
+import { VentaJuegoComponent } from './screens/venta-juego/venta-juego.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { JuegosBusquedaComponent } from './screens/juegos-busqueda/juegos-busque
     SignInComponent,
     JuegosCategoriaComponent,
     JuegosBusquedaComponent,
+    VentaJuegoComponent,
   ],
   imports: [
     BrowserModule,
