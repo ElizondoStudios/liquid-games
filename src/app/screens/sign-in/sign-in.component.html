@@ -1,0 +1,46 @@
+<img src="../../../assets/Portadas.jpg" alt="" class="back-image" />
+<div class="maincontainer">
+  <div class="imglogo">
+    <img class="logo" src="../../../assets/logo.png" alt="Logito" />
+  </div>
+  <div class="contenedor">
+    <div class="divportada mt-5">
+      <h2>Registrarme</h2>
+    </div>
+    <!--mt = margin-top mb = margin-bottom-->
+    <form class="mt-3">
+      <div class="mb-3 d-flex flex-column align-items-center">
+        <mat-form-field class="mt-2">
+          <mat-label>Usuario</mat-label>
+          <input matInput placeholder="Ingresa tu Gamertag" value="" />
+        </mat-form-field>
+        <mat-form-field class="mt-1">
+          <mat-label>Correo Electrónico</mat-label>
+          <input
+            matInput
+            placeholder="Ingresa tu correo electrónico"
+            value=""
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            [matDatepicker]="picker"
+            placeholder="Selecciona tu fecha de nacimiento"
+            [max]="hoy"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field class="mt-1">
+          <mat-label>Contraseña</mat-label>
+          <input matInput placeholder="Ingresa tu constraseña" value="" />
+        </mat-form-field>
+        <button type="submit" class="botoncito mt-1">Crear cuenta</button>
+      </div>
+    </form>
+  </div>
+</div>

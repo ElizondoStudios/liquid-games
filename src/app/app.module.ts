@@ -8,12 +8,17 @@ import { LoginComponent } from './screens/login/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BibliotecaComponent } from './screens/biblioteca/biblioteca.component';
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { CarritoComponent } from './screens/carrito/carrito.component';
+import { SignInComponent } from './screens/sign-in/sign-in.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { JuegosCategoriaComponent } from './screens/juegos-categoria/juegos-categoria.component';
+import { JuegosBusquedaComponent } from './screens/juegos-busqueda/juegos-busqueda.component';
+import { VentaJuegoComponent } from './screens/venta-juego/venta-juego.component';
 import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
@@ -24,6 +29,10 @@ import { ModalComponent } from './components/modal/modal.component';
     LoginComponent,
     BibliotecaComponent,
     CarritoComponent,
+    SignInComponent,
+    JuegosCategoriaComponent,
+    JuegosBusquedaComponent,
+    VentaJuegoComponent,
     ModalComponent,
   ],
   imports: [
@@ -32,12 +41,15 @@ import { ModalComponent } from './components/modal/modal.component';
     NgbModule,
     MatIconModule,
     MatTooltipModule,
+    MatInputModule,
+    FormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
     BrowserAnimationsModule,
+    FormsModule,
     MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

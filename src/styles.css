@@ -1,17 +1,24 @@
-*{
-    /* Variables de paleta de color */
-    --primario-color: #fff;
-    --primario-bg: #1E1E1E;
-    --acento-1: #358fee;
-    --acento-2: #01cafd;
+* {
+  /* Variables de paleta de color */
+  --primario-color: #fff;
+  --primario-bg: #1e1e1e;
+  --acento-1: #358fee;
+  --acento-2: #01cafd;
 
-    color: var(--primario-color);
+  --mdc-filled-text-field-container-color: transparent;
+
+  color: var(--primario-color);
 }
 
-body, :root{
-    background-color: #1E1E1E;
-    font-size: 10px;
-    font-family: 'Roboto', sans-serif;
+body,
+:root {
+  background-color: #1e1e1e;
+  font-size: 10px;
+  font-family: "Roboto", sans-serif;
+}
+
+body{
+    overflow-x: hidden;
 }
 
 .titulo{
@@ -19,49 +26,106 @@ body, :root{
     font-weight: normal;
 }
 
-.btn-icon{
-    background-color: transparent;
-    border: none;
+.btn-icon {
+  background-color: transparent;
+  border: none;
 }
-    .btn-icon mat-icon{
-        font-size: 4rem;
-        width: auto;
-        height: auto;
-    }
+.btn-icon mat-icon {
+  font-size: 4rem;
+  width: auto;
+  height: auto;
+}
 
 /* Custom perfect scrollbar */
-.perfect-scroll-custom{
-    scrollbar-color: #aaaaaa transparent;
-    scrollbar-width: 6px;
-    padding-left: 4px;
-    padding-right: 4px;
-    padding-bottom: 4px;
+.perfect-scroll-custom {
+  scrollbar-color: #aaaaaa transparent;
+  scrollbar-width: 6px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-bottom: 4px;
 }
 
-    .perfect-scroll-custom:hover{
-        scrollbar-color: #999 transparent;
+.perfect-scroll-custom:hover {
+  scrollbar-color: #999 transparent;
+}
+
+.perfect-scroll-custom::-webkit-scrollbar {
+  width: 6px;
+  background-color: transparent;
+}
+
+.perfect-scroll-custom::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.perfect-scroll-custom::-webkit-scrollbar-thumb {
+  background-color: #aaaaaa;
+  border-radius: 6px;
+  transition: background-color 0.2s linear, width 0.2s ease-in-out;
+  -webkit-transition: background-color 0.2s linear, width 0.2s ease-in-out;
+}
+
+.perfect-scroll-custom::-webkit-scrollbar-thumb:hover {
+  background-color: #999;
+}
+
+.perfect-scroll-custom::-webkit-scrollbar-button {
+  display: none;
+}
+
+.seccion{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    margin: 1em 0;
+    width: 100%;
+    height: 100%;
+}
+
+    .seccion .linea{
+        position: relative;
+        width: 100%;
+        height: 3px;
+        top: calc(25% - 1.5px);
+        background-color: #fff;
     }
 
-.perfect-scroll-custom::-webkit-scrollbar{
-    width: 6px;
-    background-color: transparent;
-}
-
-.perfect-scroll-custom::-webkit-scrollbar-track{
-    background-color: transparent;
-}
-
-.perfect-scroll-custom::-webkit-scrollbar-thumb{
-    background-color: #aaaaaa;
-    border-radius: 6px;
-    transition: background-color .2s linear,width .2s ease-in-out;
-    -webkit-transition: background-color .2s linear,width .2s ease-in-out;
-}
-
-    .perfect-scroll-custom::-webkit-scrollbar-thumb:hover{
-        background-color: #999;
+    .seccion .titulo{
+        background-color: var(--primario-bg);
+        z-index: 10;
+        padding: 0 1em;
+        margin: 0;
+        margin-right: 1em;
     }
 
-.perfect-scroll-custom::-webkit-scrollbar-button{
-    display: none;
+/* Tarjeta juego */
+.tarjeta-juego{
+  height: 220px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  gap: 1em;
+  transition: all 0.1s ease-out;
+  cursor: pointer;
 }
+
+  .tarjeta-juego img{
+      height: 160px;
+      border-radius: 10px;
+  }
+
+  .tarjeta-juego span{
+      font-size: 2rem;
+      max-width: 100%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      text-align: center;
+      color: var(--primario-color);
+  }
+
+  .tarjeta-juego:hover{
+      transform: scale(1.05);
+  }

@@ -1,1 +1,49 @@
-<span>Hello mawi</span>
+<div class="row">
+    <div class="col-12">
+        <div class="seccion">
+            <div class="linea"></div>
+            <span class="titulo">
+                Juegos Destacados
+            </span>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="juegos-destacados-carrousell mt-5">
+            <div class="juego-destacado" [ngStyle]="{'background-image': 'url('+JuegosDestacado[IndiceDestacado].imagen_fondo+')'}">
+                <button (click)="anteriorJuego()" class="btn-icon cambiar-juego"id="anterior-juego"><i class="material-icons">chevron_left</i></button>
+                <div class="info-juego" (click)="AbrirJuego(JuegosDestacado[IndiceDestacado].id)">
+                    <img [src]="JuegosDestacado[IndiceDestacado].imagen_portada" alt="Portada" class="portada-juego-destacado">
+                    <div class="datos">
+                        <span class="titulo">
+                            {{JuegosDestacado[IndiceDestacado].nombre}}
+                        </span>
+                        <span class="titulo">
+                            Precio: {{formatCurrency(JuegosDestacado[IndiceDestacado].precio)}}
+                        </span>
+                        <span class="titulo">
+                            ESBR: {{JuegosDestacado[IndiceDestacado].esbr}}
+                        </span>
+                    </div>
+                </div>
+                <button (click)="siguienteJuego()" class="btn-icon cambiar-juego"id="siguiente-juego"><i class="material-icons">chevron_right</i></button>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 mt-5">
+        <div class="seccion">
+            <div class="linea"></div>
+            <span class="titulo">
+                Juegos por Género
+            </span>
+        </div>
+    </div>
+    <div class="col-12 mt-5">
+        <div class="row">
+            <div class="col-6 col-lg-4 d-flex align-items-center justify-content-center my-3" *ngFor="let categoria of Categorias">
+                <div class="tarjeta-categoria" [ngStyle]="{'background-image': 'url('+categoria.imagen+')'}" (click)="AbrirCategoria(categoria.id, categoria.nombre)">
+                    <span>{{categoria.nombre}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
