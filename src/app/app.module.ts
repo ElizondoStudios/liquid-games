@@ -20,6 +20,7 @@ import { JuegosCategoriaComponent } from './screens/juegos-categoria/juegos-cate
 import { JuegosBusquedaComponent } from './screens/juegos-busqueda/juegos-busqueda.component';
 import { VentaJuegoComponent } from './screens/venta-juego/venta-juego.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
