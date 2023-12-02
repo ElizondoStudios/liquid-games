@@ -12,14 +12,6 @@ angular/material: 16.2.11
 
 ## Interfaces
 ```ts
-interface login{
-
-    username: string;
-
-    password: string;
-
-}
-
 interface categoria{
 
     id: number;
@@ -114,9 +106,25 @@ postVerJuegosEnBiblioteca(params: {id: number}): juego[]{
   //Post para ver los juegos en la biblioteca de un usuario
   //route: /api/Biblioteca/postVerJuegosEnBiblioteca
 }
-postTryLogin(params: {login : login}): juego[]{
-  //Post para intentar loggear en la aplicacion
-  //route: /api/Biblioteca/postVerJuegosEnBiblioteca
+postTryLogin(params: {username : string, password : string}): usuario{
+  //Post para intentar loggear en la aplicacion si no encuntra al usuario es un Unauthorized
+  //route: /api/Login/postTryLogin
+}
+postUsuario(params: {usuario : string, contrasenia : string, correo : string, fechaNacimiento : string}): usuario{
+  //Post par poder crear un nuevo usuario
+  //route: /api/Usuarios/postUsuario
+}
+postVerificarUsuario(params: {username : string}): boolean{
+  //Post para verificar si es que existe otro usuario con ese nombre de usuario. Retorna 
+  //route: /api/Usuarios/postVerificarUsuario
+}
+postVerificarCorreo(params: {correo : string}): boolean{
+  //Post para verificar si es que existe otro usuario con ese correo electrónico
+  //route: /api/Usuarios/postVerificarCorreo
+}
+getUsuarioEspecifico(params: {id : string}): usuario{
+  //Post para obtener toda la información de un usuario específico a través de su id
+  //route: /api/Usuarios/getUsuarioEspecifico
 }
 
 ```
