@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit{
         },
         err => {
           console.log(err)
-          const dialogRef = this.dialog.open(FailedLoginComponent);
+          this.dialog.open(FailedLoginComponent);
         }
       );
     }
