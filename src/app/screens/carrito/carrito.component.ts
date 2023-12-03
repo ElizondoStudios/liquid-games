@@ -1,42 +1,74 @@
 import { Component } from '@angular/core';
-import { data } from './data';
 import { OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from 'src/app/components/modal/modal.component';
 import { ChangeDetectorRef } from '@angular/core';
 import juego from 'src/app/interfaces/juego';
 import { Router } from '@angular/router';
+import { ApiService } from 'src/app/services/api.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ErrorComponent } from 'src/app/components/error/error.component';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-carrito',
   templateUrl: './carrito.component.html',
   styleUrls: ['./carrito.component.css']
 })
-export class CarritoComponent {
-  public games: any[] = data.results
+export class CarritoComponent implements OnInit{
+  public Juegos: juego[]=[];
 
-  constructor(public dialog: MatDialog, private cd: ChangeDetectorRef, private router: Router) { }
+  constructor(public dialog: MatDialog, private cd: ChangeDetectorRef, private router: Router, private api: ApiService, private user: UserService) { }
 
   openConfirmDialog (): void {
     const dialogRef = this.dialog.open(ModalComponent);
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        // El usuario confirmó la compra
-        // Aquí puedes colocar la lógica para manejar la confirmación de la compra
+        this.api.postVerJuegosEnCarrito({id: (this.user.GetUsuarioID() as number)}).subscribe(
+          res =>{
+            this.GetJuegos();
+          },
+          err =>{
+            console.log(err)
+            this.dialog.open(ErrorComponent);
+          }
+        )
       } else {
         // El usuario canceló la compra
       }
     });
   }
 
+  ngOnInit(): void {
+    this.GetJuegos();
+  }
+
   AbrirJuego(id: number): void{
     this.router.navigateByUrl(`inicio/venta-juego?id=${id}`);
   }
 
-  removeGame (index: number): void {
-    this.games.splice(index, 1)
+  GetJuegos(){
+    this.api.postVerJuegosEnBiblioteca({id: (this.user.GetUsuarioID() as number)}).subscribe(
+      res => {
+        this.Juegos= res;
+      },
+      err => {
+        console.log(err)
+        this.dialog.open(ErrorComponent);
+      }
+    );
+  }
 
-    this.cd.detectChanges()
+  removeGame (index: number): void {
+    this.api.postEliminarCarritoJuego({idUsuario: (this.user.GetUsuarioID() as number), idJuego: (this.Juegos[index].id as number)}).subscribe(
+      res => {
+        this.GetJuegos();
+        this.cd.detectChanges();
+      },
+      err => {
+        console.log(err)
+        this.dialog.open(ErrorComponent);
+      }
+    );
   }
 }

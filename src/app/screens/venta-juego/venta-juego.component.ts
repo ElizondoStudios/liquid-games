@@ -5,6 +5,8 @@ import { ApiService } from 'src/app/services/api.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ErrorComponent } from 'src/app/components/error/error.component';
 import { UserService } from 'src/app/services/user.service';
+import { VentaRealizadaComponent } from 'src/app/components/venta-realizada/venta-realizada.component';
+import { VentaFallidaComponent } from 'src/app/components/venta-fallida/venta-fallida.component';
 
 @Component({
   selector: 'app-venta-juego',
@@ -65,10 +67,11 @@ export class VentaJuegoComponent implements OnInit{
     this.api.postVentaJuego({idUsuario: (this.user.GetUsuarioID() as number), idJuego: (this.JuegoSeleccionado?.id as number)}).subscribe(
       res => {
         this.TieneJuego= true;
+        this.dialog.open(VentaRealizadaComponent);
       },
       err => {
         console.log(err)
-        this.dialog.open(ErrorComponent);
+        this.dialog.open(VentaFallidaComponent);
       }
     );
   }
