@@ -5,14 +5,14 @@
   <hr>
   <ul class="list-unstyled">
 
-    <li *ngFor="let game of games; let i = index">
-      <div class="game-card py-2 d-flex align-items-center justify-content-between gap-5 p-4 rounded-3" (click)="AbrirJuego(1)">
+    <li *ngFor="let juego of Juegos; let i = index">
+      <div class="game-card py-2 d-flex align-items-center justify-content-between gap-5 p-4 rounded-3" (click)="AbrirJuego(juego.id)">
         <div class="d-flex align-items-center gap-5">
-          <img alt="{{ game.name }}" class="rounded-3 img-fluid" height="64" [src]="game.background_image" width="64"
+          <img alt="{{ juego.nombre }}" class="rounded-3 img-fluid" height="64" [src]="juego.imagen_portada" width="64"
             style="aspect-ratio: 64 / 64; object-fit: cover;">
           <div>
             <h3 class="font-weight-medium">
-              {{ game.name }}
+              {{ juego.nombre }}
             </h3>
             <p class="fw-bold">
               $52
