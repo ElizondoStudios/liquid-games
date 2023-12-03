@@ -8,20 +8,20 @@
       <h2>Iniciar Sesión</h2>
     </div>
     <!--mt = margin-top mb = margin-bottom-->
-    <form class="mt-5">
+    <form class="mt-5" [formGroup]="LoginForm" (ngSubmit)="Login()">
       <div class="mb-3 d-flex flex-column align-items-center">
         <mat-form-field class="mt-2">
-          <mat-label>Correo Electrónico</mat-label>
-          <input matInput placeholder="Ingresa tu correo" value="" />
+          <mat-label>Usuario</mat-label>
+          <input matInput placeholder="Ingresa tu correo" value="" formControlName="username" />
         </mat-form-field>
         <mat-form-field class="mt-2">
           <mat-label>Contraseña</mat-label>
-          <input matInput placeholder="Ingresa tu constraseña" value="" />
+          <input matInput placeholder="Ingresa tu constraseña" value="" formControlName="password"/>
         </mat-form-field>
         <button type="submit" class="botoncito mt-2">Ingresar</button>
       </div>
       <div class="registrarse">
-        <p>¿No tienes cuenta? <a href="">Regístrate</a></p>
+        <p>¿No tienes cuenta? <a routerLink="/sign">Regístrate</a></p>
       </div>
     </form>
   </div>

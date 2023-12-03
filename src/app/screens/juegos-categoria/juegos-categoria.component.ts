@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import juego from 'src/app/interfaces/juego';
 import categoria from 'src/app/interfaces/categoria';
+import { ApiService } from 'src/app/services/api.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ErrorComponent } from 'src/app/components/error/error.component';
 
 @Component({
   selector: 'app-juegos-categoria',
@@ -13,7 +16,7 @@ export class JuegosCategoriaComponent implements OnInit{
   IdCategoria: number= 0;
   NombreCategoria: string= "";
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor(private route: ActivatedRoute, private router: Router, private api: ApiService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -28,55 +31,14 @@ export class JuegosCategoriaComponent implements OnInit{
   }
 
   GetJuegosCategoria(): void {
-    this.JuegosCategoria = [
-        {
-          id: 1,
-          nombre: 'Doom (1993)',
-          descripcion: 'Mejor shooter de la historia',
-          precio: 200,
-          descuento: 10,
-          calificacion: 10,
-          esbr: "T",
-          fecha_lanzamiento: "1993-10-01",
-          imagen_fondo: "../../assets/images/Doom_fondo.jpg",
-          imagen_portada: "../../assets/images/Doom_portada.jfif",
-        },
-        {
-          id: 2,
-          nombre: 'Ivancito Georgito',
-          descripcion: 'UwU 👉👈',
-          precio: 2000000,
-          descuento: 10,
-          calificacion: 10,
-          esbr: "M",
-          fecha_lanzamiento: "1993-10-01",
-          imagen_fondo: "../../assets/images/ivancito_georgi.jfif",
-          imagen_portada: "../../assets/images/ivan.jfif",
-        },
-        {
-          id: 3,
-          nombre: 'Doom (1993) idsjhfpiuadshifhpoadshfodsigfioadsjoifjadsiojfoiadsfosjdhpufjoiadshfjdsuafpodshfuiasoi',
-          descripcion: 'Mejor shooter de la historia',
-          precio: 200,
-          descuento: 10,
-          calificacion: 10,
-          esbr: "T",
-          fecha_lanzamiento: "1993-10-01",
-          imagen_fondo: "../../assets/images/Doom_fondo.jpg",
-          imagen_portada: "../../assets/images/Doom_portada.jfif",
-        },
-        {
-          id: 4,
-          nombre: 'Ivancito Georgito',
-          descripcion: 'UwU 👉👈',
-          precio: 2000000,
-          descuento: 10,
-          calificacion: 10,
-          esbr: "M",
-          fecha_lanzamiento: "1993-10-01",
-          imagen_fondo: "../../assets/images/ivancito_georgi.jfif",
-          imagen_portada: "../../assets/images/ivan.jfif",
-        }
-      ]
+    this.api.postJuegosCategoria({id: this.IdCategoria}).subscribe(
+      res => {
+        this.JuegosCategoria= res;
+      },
+      err => {
+        console.log(err)
+        this.dialog.open(ErrorComponent);
+      }
+    );
   }
 }

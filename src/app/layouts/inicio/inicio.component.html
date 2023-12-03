@@ -12,7 +12,12 @@
                 <a routerLinkActive="active" class="titulo nav-item nav-link" routerLink="/inicio/tienda">Tienda</a>
                 <a routerLinkActive="active" class="titulo nav-item nav-link" routerLink="/inicio/biblioteca">Biblioteca</a>
                 <a routerLinkActive="active" class="titulo nav-item nav-link" routerLink="/inicio/carrito">Carrito</a>
-                <button id="btn-config" mat-raised-button class="btn-icon" matTooltip="Configuración"><mat-icon>settings</mat-icon></button>
+                <button [cdkMenuTriggerFor]="menu" id="btn-config" mat-raised-button class="btn-icon" matTooltip="Configuración"><mat-icon>settings</mat-icon></button>
+                <ng-template #menu>
+                <div class="menu" cdkMenu>
+                    <button class="menu-item" cdkMenuItem (click)="CerrarSesion()">Cerrar sesión</button>
+                </div>
+                </ng-template>
             </div>
           </nav>
     </header>

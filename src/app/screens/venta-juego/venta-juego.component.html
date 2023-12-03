@@ -7,10 +7,11 @@
             <span class="titulo">{{JuegoSeleccionado?.precio | currency}}</span>
             <span class="titulo">Rating: {{JuegoSeleccionado?.calificacion}}</span>
             <div class="d-flex align-items-center justify-content-between">
-                <button class="btn boton-accion" id="boton-comprar" (click)="VenderJuego()">
-                    Comprar
+                <button [disabled]="TieneJuego" class="btn boton-accion" id="boton-comprar" (click)="VenderJuego()">
+                    {{TieneJuego? 'Comprado' : 'Comprar'}}
+                    <i class="material-icons" *ngIf="TieneJuego">done</i>
                 </button>
-                <button class="btn boton-accion" id="boton-agregar" (click)="AgregarJuegoCarrito()">
+                <button [disabled]="TieneJuegoCarrito" class="btn boton-accion" id="boton-agregar" (click)="AgregarJuegoCarrito()">
                     Agregar al carrito
                 </button>
             </div>

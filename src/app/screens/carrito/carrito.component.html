@@ -1,1 +1,34 @@
-<p>carrito works!</p>
+<div class="container" style="width: 70rem;">
+  <h2 class="fw-regular mb-4">
+    Juegos en el carrito:
+  </h2>
+  <hr>
+  <ul class="list-unstyled">
+
+    <li *ngFor="let game of games; let i = index">
+      <div class="game-card py-2 d-flex align-items-center justify-content-between gap-5 p-4 rounded-3" (click)="AbrirJuego(1)">
+        <div class="d-flex align-items-center gap-5">
+          <img alt="{{ game.name }}" class="rounded-3 img-fluid" height="64" [src]="game.background_image" width="64"
+            style="aspect-ratio: 64 / 64; object-fit: cover;">
+          <div>
+            <h3 class="font-weight-medium">
+              {{ game.name }}
+            </h3>
+            <p class="fw-bold">
+              $52
+            </p>
+          </div>
+        </div>
+        <button class="btn fs-3" style="color: white" (click)="removeGame(i)">Eliminar</button>
+      </div>
+      <hr>
+    </li>
+
+
+  </ul>
+  <div class="d-flex  mt-3">
+    <button class="btn btn-primary fs-3" (click)="openConfirmDialog()">
+      Comprar
+    </button>
+  </div>
+</div>
