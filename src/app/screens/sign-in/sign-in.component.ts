@@ -34,7 +34,7 @@ export class SignInComponent {
       this.api.postUsuario(this.Signform?.value).subscribe(
         res => {
           this.user.SetUsuarioID(res.id);
-          this.router.navigate(['/inicio']);
+          this.router.navigateByUrl('inicio');
         },
         err => {
           console.log(err)

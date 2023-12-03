@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit{
   createLoginForm(): FormGroup{
     return this.formBuilder.group({
       username: ['', Validators.required],
-      password: ['', Validators.required]
+      password: ['', [Validators.required, Validators.minLength(8)]]
     });
   }
 
@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit{
       this.api.postTryLogin(this.LoginForm?.value).subscribe(
         res => {
           this.user.SetUsuarioID(res.id);
-          this.router.navigate(['/inicio']);
+          this.router.navigateByUrl('inicio');
         },
         err => {
           console.log(err)
