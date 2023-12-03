@@ -21,6 +21,8 @@ import { JuegosBusquedaComponent } from './screens/juegos-busqueda/juegos-busque
 import { VentaJuegoComponent } from './screens/venta-juego/venta-juego.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { InterceptorInterceptor } from './interceptor/interceptor.interceptor';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     FormsModule,
     MatDialogModule
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass:InterceptorInterceptor, multi: true}],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
