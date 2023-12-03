@@ -29,6 +29,7 @@ import { InterceptorInterceptor } from './interceptor/interceptor.interceptor';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
+import { ErrorComponent } from './components/error/error.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { HttpClientModule } from '@angular/common/http';
     FailedLoginComponent,
     VentaFallidaComponent,
     VentaRealizadaComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,
