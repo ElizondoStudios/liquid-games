@@ -3,7 +3,6 @@ import { OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import juego from 'src/app/interfaces/juego';
 import { ApiService } from 'src/app/services/api.service';
-import { UserService } from 'src/app/services/user.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ErrorComponent } from 'src/app/components/error/error.component';
 
