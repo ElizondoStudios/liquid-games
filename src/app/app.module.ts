@@ -20,9 +20,15 @@ import { JuegosCategoriaComponent } from './screens/juegos-categoria/juegos-cate
 import { JuegosBusquedaComponent } from './screens/juegos-busqueda/juegos-busqueda.component';
 import { VentaJuegoComponent } from './screens/venta-juego/venta-juego.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { FailedLoginComponent } from './components/failed-login/failed-login.component';
+import { VentaFallidaComponent } from './components/venta-fallida/venta-fallida.component';
+import { VentaRealizadaComponent } from './components/venta-realizada/venta-realizada.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InterceptorInterceptor } from './interceptor/interceptor.interceptor';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -37,6 +43,9 @@ import { InterceptorInterceptor } from './interceptor/interceptor.interceptor';
     JuegosBusquedaComponent,
     VentaJuegoComponent,
     ModalComponent,
+    FailedLoginComponent,
+    VentaFallidaComponent,
+    VentaRealizadaComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,8 +58,10 @@ import { InterceptorInterceptor } from './interceptor/interceptor.interceptor';
     MatDatepickerModule,
     MatNativeDateModule,
     BrowserAnimationsModule,
-    FormsModule,
-    MatDialogModule
+    ReactiveFormsModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    HttpClientModule
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass:InterceptorInterceptor, multi: true}],
   bootstrap: [AppComponent],
