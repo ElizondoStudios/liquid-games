@@ -30,6 +30,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
 import { ErrorComponent } from './components/error/error.component';
+import {CdkMenuModule} from '@angular/cdk/menu';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -63,7 +65,9 @@ import { ErrorComponent } from './components/error/error.component';
     ReactiveFormsModule,
     MatDialogModule,
     MatFormFieldModule,
-    HttpClientModule
+    HttpClientModule,
+    CdkMenuModule,
+    MatMenuModule,
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass:InterceptorInterceptor, multi: true}],
   bootstrap: [AppComponent],
