@@ -1,0 +1,19 @@
+.game-card:hover {
+  background-color: var(--acento-1);
+  /* background-color: #727272;  */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); 
+  scale: 1.05;
+}
+
+.game-card {
+  transition: background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out, scale 0.25s ease-in-out;
+  cursor: pointer;
+}
+
+button:hover{
+ scale: 1.1;
+}
+
+button {
+  transition: scale 0.25s ease-in-out;
+}

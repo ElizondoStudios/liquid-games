@@ -19,6 +19,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JuegosCategoriaComponent } from './screens/juegos-categoria/juegos-categoria.component';
 import { JuegosBusquedaComponent } from './screens/juegos-busqueda/juegos-busqueda.component';
 import { VentaJuegoComponent } from './screens/venta-juego/venta-juego.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ import { VentaJuegoComponent } from './screens/venta-juego/venta-juego.component
     JuegosCategoriaComponent,
     JuegosBusquedaComponent,
     VentaJuegoComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +48,7 @@ import { VentaJuegoComponent } from './screens/venta-juego/venta-juego.component
     MatNativeDateModule,
     BrowserAnimationsModule,
     FormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent],
