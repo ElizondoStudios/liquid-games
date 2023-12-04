@@ -20,7 +20,6 @@ export class BibliotecaComponent implements OnInit{
   constructor(private router: Router, private api: ApiService, private user: UserService, private dialog: MatDialog){}
 
   ngOnInit(): void {
-    this.GetJuegos();
     this.GetUsuario();
   }
 
@@ -44,6 +43,7 @@ export class BibliotecaComponent implements OnInit{
     this.api.getUsuarioEspecifico({id: (this.user.GetUsuarioID() as number)}).subscribe(
       res => {
         this.Usuario= res;
+        this.GetJuegos();
       },
       err => {
         console.log(err)
