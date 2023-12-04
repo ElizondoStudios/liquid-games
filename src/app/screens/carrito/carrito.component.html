@@ -6,8 +6,8 @@
   <ul class="list-unstyled">
 
     <li *ngFor="let juego of Juegos; let i = index">
-      <div class="game-card py-2 d-flex align-items-center justify-content-between gap-5 p-4 rounded-3" (click)="AbrirJuego(juego.id)">
-        <div class="d-flex align-items-center gap-5">
+      <div class="game-card py-2 d-flex align-items-center justify-content-between gap-5 p-4 rounded-3">
+        <div class="d-flex align-items-center gap-5" (click)="AbrirJuego(juego.id)">
           <img alt="{{ juego.nombre }}" class="rounded-3 img-fluid" height="64" [src]="juego.imagen_portada" width="64"
             style="aspect-ratio: 64 / 64; object-fit: cover;">
           <div>
@@ -15,7 +15,7 @@
               {{ juego.nombre }}
             </h3>
             <p class="fw-bold">
-              $52
+              {{juego.precio | currency}}
             </p>
           </div>
         </div>
@@ -26,7 +26,7 @@
 
 
   </ul>
-  <div class="d-flex  mt-3">
+  <div class="d-flex  mt-3" *ngIf="Juegos.length>0">
     <button class="btn btn-primary fs-3" (click)="openConfirmDialog()">
       Comprar
     </button>

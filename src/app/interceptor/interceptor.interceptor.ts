@@ -15,7 +15,7 @@ export class InterceptorInterceptor implements HttpInterceptor {
   constructor(private user: UserService, private router: Router) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    if(this.user.GetUsuarioID() != null){
+    if(this.user.GetUsuarioID() != null || request.url.includes("/Login/postTryLogin") || request.url.includes("/Usuarios/post")){
       return next.handle(request);
     }else{
       this.router.navigateByUrl('/login');

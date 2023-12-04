@@ -24,7 +24,7 @@ export class CarritoComponent implements OnInit{
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.api.postVerJuegosEnCarrito({id: (this.user.GetUsuarioID() as number)}).subscribe(
+        this.api.postVentaCarrito({id: (this.user.GetUsuarioID() as number)}).subscribe(
           res =>{
             this.GetJuegos();
           },
@@ -48,7 +48,7 @@ export class CarritoComponent implements OnInit{
   }
 
   GetJuegos(){
-    this.api.postVerJuegosEnBiblioteca({id: (this.user.GetUsuarioID() as number)}).subscribe(
+    this.api.postVerJuegosEnCarrito({id: (this.user.GetUsuarioID() as number)}).subscribe(
       res => {
         this.Juegos= res;
       },

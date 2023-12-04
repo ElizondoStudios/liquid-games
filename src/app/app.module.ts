@@ -69,7 +69,7 @@ import {MatMenuModule} from '@angular/material/menu';
     CdkMenuModule,
     MatMenuModule,
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass:InterceptorInterceptor, multi: true}],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass:InterceptorInterceptor, multi : true}],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
