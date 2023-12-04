@@ -26,4 +26,8 @@ export class InicioComponent {
     this.user.SetUsuarioID(null);
     this.router.navigateByUrl(`login`);
   }
+
+  AbrirUsuario(){
+    this.router.navigateByUrl(`inicio/usuario`);
+  }
 }

@@ -129,3 +129,16 @@ body{
   .tarjeta-juego:hover{
       transform: scale(1.05);
   }
+
+  .boton-accion{
+    width: 50%;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 500;
+    height: 50px;
+    background-color: var(--acento-1);
+}
+
+.boton-accion:hover{
+    transform: scale(1.05);
+}

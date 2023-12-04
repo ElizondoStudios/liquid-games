@@ -34,6 +34,7 @@ import {CdkMenuModule} from '@angular/cdk/menu';
 import {MatMenuModule} from '@angular/material/menu';
 import { SeleccioneMetodoComponent } from './components/seleccione-metodo/seleccione-metodo.component';
 import { AgregarMetodoComponent } from './components/agregar-metodo/agregar-metodo.component';
+import { UsuarioComponent } from './screens/usuario/usuario.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { AgregarMetodoComponent } from './components/agregar-metodo/agregar-meto
     ErrorComponent,
     SeleccioneMetodoComponent,
     AgregarMetodoComponent,
+    UsuarioComponent,
   ],
   imports: [
     BrowserModule,

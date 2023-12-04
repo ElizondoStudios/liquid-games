@@ -5,6 +5,7 @@ import { CarritoComponent } from 'src/app/screens/carrito/carrito.component';
 import { JuegosCategoriaComponent } from 'src/app/screens/juegos-categoria/juegos-categoria.component';
 import { JuegosBusquedaComponent } from 'src/app/screens/juegos-busqueda/juegos-busqueda.component';
 import { VentaJuegoComponent } from 'src/app/screens/venta-juego/venta-juego.component';
+import { UsuarioComponent } from 'src/app/screens/usuario/usuario.component';
 
 export const InicioRoutes: Routes = [
     { path: 'tienda', component: TiendaComponent, data: { title: 'Tienda' } },
@@ -13,6 +14,6 @@ export const InicioRoutes: Routes = [
     { path: 'juegos-categoria', component: JuegosCategoriaComponent, data: { title: 'Juegos por categoria' } },
     { path: 'juegos-busqueda', component: JuegosBusquedaComponent, data: { title: 'Juegos por busqueda' } },
     { path: 'venta-juego', component: VentaJuegoComponent, data: { title: 'Venta de juego' } },
-
+    { path: 'usuario', component: UsuarioComponent, data: { title: 'Usuario' } },
     { path: '', redirectTo: 'tienda', pathMatch: 'full' }
 ];

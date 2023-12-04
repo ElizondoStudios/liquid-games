@@ -1,0 +1,31 @@
+<div class="container d-flex align-items-center justify-content-center flex-column py-3">
+    <i class="material-icons" style="font-size: 5rem">person</i>
+    <form [formGroup]="UsuarioForm" (ngSubmit)="PutUsuario()" class="container d-flex align-items-center justify-content-center flex-column py-3">
+        <mat-form-field>
+            <input matInput type="text" [disabled]="true" formControlName="usuario"/>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="text" [disabled]="true" formControlName="contrasenia"/>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="text" [disabled]="true" formControlName="correo"/>
+        </mat-form-field>
+        <mat-form-field>
+            <input
+              matInput
+              [matDatepicker]="picker"
+              placeholder="Selecciona tu fecha de nacimiento"
+              [max]="hoy"
+              formControlName="fechaNacimiento"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <div class="row align-items-center justify-content-center">
+            <button type="submit" class="boton-accion">Guardar cambios</button>
+          </div>
+    </form>
+</div>
