@@ -32,6 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ErrorComponent } from './components/error/error.component';
 import {CdkMenuModule} from '@angular/cdk/menu';
 import {MatMenuModule} from '@angular/material/menu';
+import { SeleccioneMetodoComponent } from './components/seleccione-metodo/seleccione-metodo.component';
+import { AgregarMetodoComponent } from './components/agregar-metodo/agregar-metodo.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +52,8 @@ import {MatMenuModule} from '@angular/material/menu';
     VentaFallidaComponent,
     VentaRealizadaComponent,
     ErrorComponent,
+    SeleccioneMetodoComponent,
+    AgregarMetodoComponent,
   ],
   imports: [
     BrowserModule,
