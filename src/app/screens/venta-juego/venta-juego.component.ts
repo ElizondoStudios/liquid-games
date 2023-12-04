@@ -24,7 +24,6 @@ export class VentaJuegoComponent implements OnInit{
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       this.GetJuegoPorId(params['id']);
-      this.VerificarJuegoEnBiblioteca();
     });
   }
 
@@ -32,6 +31,7 @@ export class VentaJuegoComponent implements OnInit{
     this.api.postJuegoPorID({id: id}).subscribe(
       res => {
         this.JuegoSeleccionado= res;
+        this.VerificarJuegoEnBiblioteca();
       },
       err => {
         console.log(err)
@@ -44,6 +44,7 @@ export class VentaJuegoComponent implements OnInit{
     this.api.postUsuarioTieneJuego({idUsuario: (this.user.GetUsuarioID() as number), idJuego: (this.JuegoSeleccionado?.id as number)}).subscribe(
       res => {
         this.TieneJuego= res;
+        this.TieneJuegoCarrito= true;
       },
       err => {
         console.log(err)
@@ -68,6 +69,7 @@ export class VentaJuegoComponent implements OnInit{
     this.api.postVentaJuego({idUsuario: (this.user.GetUsuarioID() as number), idJuego: (this.JuegoSeleccionado?.id as number)}).subscribe(
       res => {
         this.TieneJuego= true;
+        this.TieneJuegoCarrito= true;
         this.dialog.open(VentaRealizadaComponent);
       },
       err => {
