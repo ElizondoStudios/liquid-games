@@ -2,13 +2,13 @@
     <i class="material-icons" style="font-size: 5rem">person</i>
     <form [formGroup]="UsuarioForm" (ngSubmit)="PutUsuario()" class="container d-flex align-items-center justify-content-center flex-column py-3">
         <mat-form-field>
-            <input matInput type="text" [disabled]="true" formControlName="usuario"/>
+            <input placeholder="usuario" matInput type="text" [disabled]="true" formControlName="usuario"/>
         </mat-form-field>
         <mat-form-field>
-            <input matInput type="text" [disabled]="true" formControlName="contrasenia"/>
+            <input placeholder="contraseña" matInput type="text" [disabled]="true" formControlName="contrasenia"/>
         </mat-form-field>
         <mat-form-field>
-            <input matInput type="text" [disabled]="true" formControlName="correo"/>
+            <input placeholder="correo" matInput type="text" [disabled]="true" formControlName="correo"/>
         </mat-form-field>
         <mat-form-field>
             <input
