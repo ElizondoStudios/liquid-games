@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class ApiService {
 
   constructor(private http: HttpClient) { }
@@ -55,7 +56,7 @@ export class ApiService {
     //Post para ver los juegos en el carrito de un usuario
     //route: /api/Carritos/postVerJuegosEnCarrito
   }
-  public postVentaCarrito(params: {idUsuario: number, idJuego: number}): Observable<any>{
+  public postVentaCarrito(params: {id: number}): Observable<any>{
     return this.http.post(`${environment.API_URL}/Carritos/postVentaCarrito`, params)
     //Post para obtener realizar la venta de un juego
     //route: /api/Ventas/postVentaJuego
