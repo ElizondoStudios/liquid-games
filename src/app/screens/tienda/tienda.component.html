@@ -7,21 +7,21 @@
             </span>
         </div>
     </div>
-    <div class="col-12">
+    <div class="col-12" *ngIf="JuegosDestacado.length > 0">
         <div class="juegos-destacados-carrousell mt-5">
-            <div class="juego-destacado" [ngStyle]="{'background-image': 'url('+JuegosDestacado[IndiceDestacado].imagen_fondo+')'}">
+            <div class="juego-destacado" [ngStyle]="{'background-image': 'url('+JuegosDestacado[IndiceDestacado]?.imagen_fondo+')'}">
                 <button (click)="anteriorJuego()" class="btn-icon cambiar-juego"id="anterior-juego"><i class="material-icons">chevron_left</i></button>
                 <div class="info-juego" (click)="AbrirJuego(JuegosDestacado[IndiceDestacado].id)">
-                    <img [src]="JuegosDestacado[IndiceDestacado].imagen_portada" alt="Portada" class="portada-juego-destacado">
+                    <img [src]="JuegosDestacado[IndiceDestacado]?.imagen_portada" alt="Portada" class="portada-juego-destacado">
                     <div class="datos">
                         <span class="titulo">
-                            {{JuegosDestacado[IndiceDestacado].nombre}}
+                            {{JuegosDestacado[IndiceDestacado]?.nombre}}
                         </span>
                         <span class="titulo">
                             Precio: {{formatCurrency(JuegosDestacado[IndiceDestacado].precio)}}
                         </span>
                         <span class="titulo">
-                            ESBR: {{JuegosDestacado[IndiceDestacado].esbr}}
+                            ESBR: {{JuegosDestacado[IndiceDestacado]?.esbr}}
                         </span>
                     </div>
                 </div>
