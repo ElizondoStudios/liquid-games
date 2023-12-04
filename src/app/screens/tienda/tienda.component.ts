@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ErrorComponent } from 'src/app/components/error/error.component';
+import { forkJoin, of, pipe, switchMap } from 'rxjs';
+import { provideNoopAnimations } from '@angular/platform-browser/animations';
 
 @Component({
   selector: 'app-tienda',
@@ -16,11 +18,12 @@ export class TiendaComponent {
   Categorias: categoria[] = [];
   IndiceDestacado: number= 0;
 
-  constructor(private router: Router, private api: ApiService, private dialog: MatDialog) { }
+  constructor(private router: Router, private api: ApiService, private dialog: MatDialog) {
+
+   }
 
   ngOnInit(): void {
     this.GetJuegosDestacado();
-    this.GetCategorias();
   }
 
   siguienteJuego(): void {
@@ -63,8 +66,9 @@ export class TiendaComponent {
 
   GetJuegosDestacado(): void {
     this.api.getJuegosDestacados().subscribe(
-      res => {
+      (res : any) => {
         this.JuegosDestacado= res;
+        this.GetCategorias();
       },
       err => {
         console.log(err)
@@ -75,7 +79,7 @@ export class TiendaComponent {
 
   GetCategorias(): void {
     this.api.getGeneros().subscribe(
-      res => {
+      (res : any) => {
         this.Categorias= res;
       },
       err => {
