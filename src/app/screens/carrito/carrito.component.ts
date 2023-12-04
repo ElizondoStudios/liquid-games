@@ -16,6 +16,9 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class CarritoComponent implements OnInit{
   public Juegos: juego[]=[];
+  Total=0;
+  SubTotal=0;
+  IVA=0;
 
   constructor(public dialog: MatDialog, private cd: ChangeDetectorRef, private router: Router, private api: ApiService, private user: UserService) { }
 
@@ -51,6 +54,9 @@ export class CarritoComponent implements OnInit{
     this.api.postVerJuegosEnCarrito({id: (this.user.GetUsuarioID() as number)}).subscribe(
       res => {
         this.Juegos= res;
+        this.Total= this.Juegos.reduce((a, b) => a + (b.precio || 0), 0);
+        this.SubTotal= this.Total/1.16;
+        this.IVA= this.Total-this.SubTotal;
       },
       err => {
         console.log(err)

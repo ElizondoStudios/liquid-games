@@ -23,9 +23,21 @@
       </div>
       <hr>
     </li>
-
-
   </ul>
+  <div class="row w-100">
+    <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
+      <span>Subtotal: </span>
+      {{SubTotal | currency}}
+    </div>
+    <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
+      <span>IVA: </span>
+      {{IVA | currency}}
+    </div>
+    <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
+      <span>Total: </span>
+      {{Total | currency}}
+    </div>
+  </div>
   <div class="d-flex  mt-3" *ngIf="Juegos.length>0">
     <button class="btn btn-primary fs-3" (click)="openConfirmDialog()">
       Comprar
