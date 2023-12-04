@@ -98,7 +98,7 @@ export class ApiService {
   }
 
   public putUsuario(params: {id: number, usuario : string, contrasenia : string, correo : string, fechaNacimiento : string}): Observable<any>{
-    return this.http.post(`${environment.API_URL}/Usuarios/putUsuario`, params)
+    return this.http.put(`${environment.API_URL}/Usuarios/putUsuario`, params)
     //Post par poder crear un nuevo usuario
     //route: /api/Usuarios/postUsuario
   }
