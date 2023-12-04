@@ -24,6 +24,7 @@ export class VentaJuegoComponent implements OnInit{
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       this.GetJuegoPorId(params['id']);
+      this.VerificarJuegoEnBiblioteca();
     });
   }
 
